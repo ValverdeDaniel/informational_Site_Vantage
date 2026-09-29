@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" preserveAspectRatio="xMidYMid slice">
+  <!-- Hand-drawn placeholder art: the view from a vantage point. Rights-clean.
+       SWAP SLOT: to use a licensed photo, drop images/hero.jpg (3:2, at least 2400 x 1600,
+       never upscaled) beside this file and change the <img src> in index.html. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6f7f9"/>
+      <stop offset="1" stop-color="#e8f0fb"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1.5" fill="#173a63" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect width="1200" height="800" fill="url(#dots)"/>
+
+  <!-- sun -->
+  <circle cx="790" cy="330" r="130" fill="#3b82d6" opacity="0.12"/>
+  <circle cx="790" cy="330" r="76" fill="#3b82d6" opacity="0.24"/>
+
+  <!-- ridgelines, far to near -->
+  <path d="M0 478 C 150 430, 270 452, 400 446 S 650 486, 800 456 S 1050 418, 1200 452 L1200 800 L0 800 Z" fill="#9db4cf" opacity="0.55"/>
+  <path d="M0 566 C 120 520, 250 544, 380 532 S 620 596, 780 562 S 1000 512, 1200 548 L1200 800 L0 800 Z" fill="#2e6fc7" opacity="0.55"/>
+  <path d="M0 646 C 100 600, 190 614, 320 602 S 560 666, 700 642 S 950 590, 1200 632 L1200 800 L0 800 Z" fill="#173a63"/>
+  <path d="M0 726 C 90 690, 160 702, 240 690 S 460 746, 620 722 S 900 682, 1200 712 L1200 800 L0 800 Z" fill="#0f2d4f"/>
+
+  <!-- the vantage marker and its sightline to the horizon -->
+  <line x1="238" y1="652" x2="1090" y2="466" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="6 9"/>
+  <line x1="232" y1="692" x2="232" y2="652" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="232" cy="648" r="6" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,326 @@
+/* Vantage Risk Solutions — brokerage website
+   Shared by every page. No external requests of any kind: no fonts, scripts,
+   analytics or images are fetched from anywhere.
+
+   The visual system follows alliant.com, which the firm named as the reference:
+   three surfaces (white, one grey tint, one navy band), square corners
+   everywhere, big headings at regular weight, small heavy eyebrows, generous
+   section padding, and photography shown clean with no scrim over it — text
+   legibility comes from a solid panel BESIDE the photo, never from darkening
+   it. Brand colours are the logo's own. */
+
+:root {
+  /* Ink */
+  --ink: #1c2430;        /* headings */
+  --body: #3c4551;       /* body copy — softer than black, as Alliant does */
+  --ink2: #5b6573;       /* secondary */
+  /* Brand — from the logo kit */
+  --navy: #173a63;
+  --navy-dark: #0f2d4f;
+  --blue: #2e6fc7;
+  --cyan: #22b8d8;
+  --beacon: #f5b82e;
+  --nav-link: #9db4cf;
+  /* Surfaces — only three, plus white */
+  --page: #f6f7f9;
+  --card: #ffffff;
+  --border: #e6e8ec;
+  /* Placeholders (amber, darkened to clear 4.5:1) */
+  --amber: #8a5a00;
+  --amber-bg: #faf0d7;
+  --green: #1f8a5b;
+  /* Type — IBM Plex Sans is the brand font (the logo wordmark is Plex
+     SemiBold). It renders wherever installed and falls back to the same
+     humanist class; no font file is fetched. */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Scale */
+  --container: 1200px;
+  --gutter: 24px;
+  --nav-h: 60px;
+  --pad: 104px;          /* vertical section padding */
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--body);
+  background: var(--card);
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+a:hover { color: var(--navy); }
+
+/* Big and light; never bold the large type. */
+h1, h2, h3, h4 { color: var(--ink); margin: 0 0 14px; }
+h1 { font-size: clamp(34px, 5vw, 50px); font-weight: 400; letter-spacing: -1px; line-height: 1.12; }
+h2 { font-size: clamp(27px, 3.4vw, 38px); font-weight: 400; letter-spacing: -0.6px; line-height: 1.18; }
+h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.3; margin-top: 40px; }
+h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+     color: var(--navy); margin: 0 0 12px; }
+p { margin: 0 0 16px; }
+ul, ol { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 7px; }
+strong { font-weight: 600; color: var(--ink); }
+address { font-style: normal; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+#main:focus { outline: none; }
+[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.skip-link {
+  position: absolute; left: 8px; top: -60px; z-index: 200;
+  background: var(--card); color: var(--navy); padding: 8px 12px; border: 1px solid var(--border);
+}
+.skip-link:focus { top: 8px; }
+
+/* Small heavy label above a heading, with the logo's cyan rule under it. */
+.eyebrow {
+  display: block; font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--ink2); margin-bottom: 14px;
+}
+.eyebrow::after {
+  content: ""; display: block; width: 34px; height: 3px;
+  background: var(--cyan); margin-top: 10px;
+}
+.lede { font-size: 20px; line-height: 1.55; color: var(--ink2); max-width: 46ch; }
+.section-head { margin-bottom: 48px; }
+.section-head .lede { margin-bottom: 0; }
+.note { font-size: 15px; color: var(--ink2); border-left: 3px solid var(--border);
+        padding-left: 14px; margin-top: 24px; max-width: 62ch; }
+
+/* A fact the team still has to supply. Filling one = deleting the span.
+   Must wrap: a long placeholder set nowrap once forced a column wider than a phone. */
+.ph {
+  background: var(--amber-bg); color: var(--amber);
+  border: 1px dashed var(--amber); padding: 0 5px; font-weight: 500; font-size: 0.95em;
+}
+
+/* ---------- Buttons — square, one accent ---------- */
+.btn {
+  display: inline-block; padding: 14px 26px; border: 1px solid transparent;
+  font: inherit; font-weight: 600; font-size: 16px; line-height: 1.3;
+  text-decoration: none; cursor: pointer; text-align: center;
+}
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-dark); color: #fff; }
+.btn-secondary { background: transparent; color: var(--navy); border-color: #93a8c4; }
+.btn-secondary:hover { background: var(--card); color: var(--navy); border-color: var(--navy); }
+.btn-light { background: var(--card); color: var(--navy); }
+.btn-light:hover { background: #e8f0fb; color: var(--navy); }
+
+/* Text link with an arrow that slides on hover — Alliant's one CTA flourish. */
+.more {
+  display: inline-block; font-weight: 600; font-size: 16px; text-decoration: none;
+  color: var(--blue);
+}
+.more::after {
+  content: "→"; display: inline-block; margin-left: 8px;
+  transition: margin-left .2s linear;
+}
+.more:hover { color: var(--navy); }
+.more:hover::after { margin-left: 16px; }
+
+/* ---------- Sticky nav ---------- */
+.nav { position: sticky; top: 0; z-index: 100; background: var(--navy-dark); }
+.nav .container { display: flex; align-items: center; gap: 24px; min-height: var(--nav-h); }
+/* The logo carries its own wordmark, so the brand is the image alone.
+   The kit's rule: 32-48px tall in a header, never below 24px. */
+.brand { display: flex; align-items: center; text-decoration: none; flex: 0 0 auto; }
+.brand-logo { height: 34px; width: auto; }
+.nav nav { margin-left: auto; min-width: 0; }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; }
+.nav-links a { color: var(--nav-link); text-decoration: none; font-size: 15px;
+               font-weight: 500; white-space: nowrap; padding: 4px 0; }
+.nav-links a:hover { color: #fff; }
+.nav-links a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 var(--cyan); }
+.nav .btn { flex: 0 0 auto; padding: 9px 18px; font-size: 15px; }
+.nav :focus-visible { outline-color: #fff; }
+
+/* ---------- Hero: a solid panel beside a clean photo ----------
+   The photo bleeds to the right edge; the copy's left edge lines up with the
+   container. max() keeps that alignment without the fragile fixed-pixel gutter
+   Alliant uses. The photo is never darkened — contrast comes from the panel. */
+.hero { background: var(--page); padding: 0; }   /* the photo runs edge to edge */
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.hero-copy {
+  align-self: center;
+  padding: 88px 56px 96px max(var(--gutter), calc((100vw - var(--container)) / 2));
+}
+/* The cell stretches to the row; the image is absolute so it fills that height
+   whatever the copy does. Definite height is what `object-fit` needs. */
+.hero-photo { position: relative; background: #dfe6ef; }
+.hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero h1 { margin-bottom: 20px; }
+.hero .lede { margin-bottom: 30px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+/* Shorter variant for the interior pages. */
+.hero-sm .hero-inner { min-height: 320px; }
+.hero-sm .hero-copy { padding-top: 56px; padding-bottom: 60px; }
+.hero-sm .lede { margin-bottom: 0; }
+.hero-lg .hero-inner { min-height: 560px; }
+
+/* ---------- Sections ---------- */
+section { padding: var(--pad) 0; }
+.alt { background: var(--page); }
+
+/* Practice cards — no box: photo, gap, title, one sentence, arrow link. */
+.practice { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.practice-item img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.practice-item h2 { font-size: 26px; font-weight: 600; letter-spacing: -0.2px; margin: 26px 0 12px; }
+.practice-item p { font-size: 17px; color: var(--ink2); margin-bottom: 18px; }
+
+/* Line lists — grouped by a navy top rule rather than a card. */
+.groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px 40px; }
+.groups > div { border-top: 2px solid var(--navy); padding-top: 16px; }
+.groups ul { list-style: none; margin: 0; padding: 0; }
+.groups li { margin: 0 0 9px; font-size: 16px; }
+.groups li small { display: block; color: var(--ink2); font-size: 14px; line-height: 1.45; margin-top: 2px; }
+
+/* Tinted blocks for the funding models etc. */
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tile { background: var(--page); padding: 26px 28px; }
+.alt .tile { background: var(--card); }
+.tile h4 { color: var(--navy); }
+.tile p { margin: 0; font-size: 16px; }
+
+/* Numbered process steps keep their numbers — the order is the point. */
+.steps { padding-left: 26px; max-width: 74ch; }
+.steps li { margin-bottom: 12px; }
+.steps li::marker { color: var(--navy); font-weight: 600; }
+.steps li strong { color: var(--ink); }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.checks { list-style: none; padding: 0; margin: 0; }
+.checks li { position: relative; padding-left: 28px; margin-bottom: 10px; font-size: 16px; }
+.checks li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--green); font-weight: 700; }
+
+/* Industries */
+.industries { list-style: none; padding: 0; margin: 0 0 24px;
+              display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 28px 32px; }
+.industries li { border-top: 1px solid var(--border); padding-top: 14px; }
+.industries li strong { display: block; color: var(--ink); font-size: 17px; margin-bottom: 2px; }
+.industries li span { font-size: 15px; color: var(--ink2); }
+
+/* How we work */
+.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+/* Navy, not cyan: cyan is 2.36:1 on white — fine for a rule, not for type. */
+.how-num { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+           color: var(--navy); margin-bottom: 10px; text-transform: uppercase; }
+.how h3 { margin-top: 0; font-size: 21px; }
+.how p { font-size: 16px; color: var(--ink2); margin: 0; }
+
+/* FAQ */
+.faq h3 { font-size: 19px; margin-top: 34px; }
+.faq h3:first-of-type { margin-top: 0; }
+.faq p { max-width: 68ch; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+.about-grid > div { min-width: 0; }
+.partners { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
+.partners h3 { margin-top: 0; }
+
+/* Contact band — the one navy section */
+.contact { background: var(--navy-dark); color: #fff; }
+.contact h2, .contact h3 { color: #fff; }
+.contact .eyebrow { color: #c4d4e6; }
+.contact .lede { color: #d3deea; }
+.contact a { color: #fff; }
+/* ...but the light button keeps navy text: `.contact a` would otherwise win on
+   specificity and paint white-on-white. */
+.contact .btn-light { color: var(--navy); }
+.contact .btn-light:hover { color: var(--navy); }
+.contact address { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+                   gap: 20px 28px; margin: 32px 0 40px; }
+.contact address > div { border-top: 1px solid rgba(255,255,255,.22); padding-top: 12px; }
+.contact address span:first-child { display: block; font-size: 12px; text-transform: uppercase;
+                                    letter-spacing: 0.08em; color: var(--nav-link); margin-bottom: 4px; }
+.contact .checks li::before { color: #7fd1a5; }
+.phi { background: rgba(255,255,255,.07); border-left: 3px solid var(--beacon);
+       padding: 14px 18px; margin-top: 8px; font-size: 16px; }
+.contact :focus-visible { outline-color: #fff; }
+
+/* Footer — compact; the disclosures live on legal.html */
+.footer { background: var(--navy-dark); color: #d3deea; border-top: 1px solid rgba(255,255,255,.1);
+          padding: 56px 0 36px; font-size: 15px; }
+.footer .container { display: grid; grid-template-columns: 5fr 3fr 4fr; gap: 44px; }
+.footer h3 { color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em;
+             margin: 0 0 14px; font-weight: 700; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { margin-bottom: 9px; }
+.footer a { color: var(--nav-link); text-decoration: none; }
+.footer a:hover { color: #fff; }
+.footer .brand { margin-bottom: 16px; }
+.footer .brand-logo { height: 30px; }
+.footer p { font-size: 15px; }
+.copyright { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1);
+             color: var(--nav-link); font-size: 14px; }
+
+/* Legal page */
+.legal h3 { font-size: 19px; margin-top: 36px; }
+.legal h3:first-of-type { margin-top: 0; }
+.legal p { max-width: 70ch; font-size: 16px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  :root { --pad: 78px; }
+  .about-grid { grid-template-columns: 1fr; gap: 18px; }
+  .footer .container { grid-template-columns: 1fr 1fr; }
+  .practice { gap: 40px; }
+}
+/* The one-row nav needs ~1000px; below that it becomes two rows: brand + button,
+   then the links as a horizontal scroll strip. No burger, no script — every link
+   stays a real anchor. --nav-h moves with it so anchor targets still clear it. */
+@media (max-width: 1000px) {
+  :root { --nav-h: 96px; }
+  .nav .container { flex-wrap: wrap; gap: 0 12px; }
+  .brand { min-height: 56px; }
+  .nav .btn { margin-left: auto; }
+  .nav nav { order: 3; flex: 1 0 100%; margin: 0 calc(-1 * var(--gutter)); }
+  .nav-links { padding: 0 32px 10px var(--gutter); overflow-x: auto; overflow-y: hidden;
+               -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+}
+@media (max-width: 860px) {
+  .hero-inner, .hero-lg .hero-inner, .hero-sm .hero-inner { grid-template-columns: 1fr; min-height: 0; }
+  .hero-photo { aspect-ratio: 16 / 9; }   /* definite height for the absolute img */
+  .hero-copy { padding: 40px var(--gutter) 48px; }
+  .hero-sm .hero-copy { padding-top: 36px; padding-bottom: 40px; }
+  .practice, .tiles, .how, .two-col { grid-template-columns: 1fr; }
+  .practice { gap: 48px; }
+}
+@media (max-width: 760px) {
+  :root { --gutter: 16px; --pad: 64px; }
+  .lede { font-size: 18px; }
+  .footer .container { grid-template-columns: 1fr; gap: 30px; }
+  .btn { display: block; width: 100%; }
+  .nav .btn, .more { display: inline-block; width: auto; }
+}
+@media (max-width: 400px) {
+  .brand-logo { height: 28px; }     /* still above the kit's 24px floor */
+  .nav .btn { padding: 8px 14px; font-size: 14px; }
+}
+
+/* ---------- Motion and print ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media print {
+  .nav, .hero-photo, .btn, .hero-actions, .skip-link { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  section { padding: 18pt 0; }
+  .tile, .industries li, .groups > div, .steps > li { break-inside: avoid; }
+  .tile { background: #fff; border: 1px solid #999; }
+  .hero-copy { padding: 0 0 12pt !important; }
+  .contact, .footer { background: #fff; color: #000; }
+  .contact h2, .contact h3, .footer h3 { color: #000; }
+  .contact .lede, .contact .eyebrow, .contact address span:first-child,
+  .copyright, .footer a, .contact a { color: #000 !important; }
+}
