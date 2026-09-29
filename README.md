@@ -35,17 +35,20 @@ images/pc.webp                 Commercial Property & Casualty
 images/about.webp              About
 images/hero.svg                our own drawing, kept as a fallback
 images/CREDITS.md              where each photograph came from
-images/brand-kit.html          the logo kit's own page: every file, with usage rules
-images/vantage-logo.svg|.png   full-colour logo, for white or light backgrounds
-images/vantage-logo-white.*    white logo — what the navy header and footer use
-images/vantage-mark-white.svg  mark only, for dark backgrounds
-images/vantage-mark.png        mark only, full colour
-images/vantage-app-icon.*      512px app icon, for social profile pictures
-images/favicon.svg · favicon-32.png · apple-touch-icon.png
+images/vantage-silver-v/       the silver V logo kit — the logo the site uses:
+  index.html                   the kit's own page: every file, with usage rules
+  vantage-logo.svg|.png        gunmetal logo, for white or light backgrounds
+  vantage-logo-white.*         silver logo — what the navy header and footer use
+  vantage-logo-stacked*.*      stacked logo, for tall spaces
+  vantage-mark*.svg|.png       mark only, gunmetal and silver
+  vantage-app-icon.*           512px app icon, for social profile pictures
+  favicon.svg · favicon-32.png · apple-touch-icon.png
+images/lighthouse-logo/        the lighthouse logo kit, kept as the alternative; its own
+                               page is brand-kit.html
 ```
 
-`images/brand-kit.html` is internal reference — nothing links to it, and you can delete it
-before publishing.
+The two kit pages (`images/vantage-silver-v/index.html`, `images/lighthouse-logo/brand-kit.html`)
+are internal reference — nothing links to them, and you can delete them before publishing.
 
 ## Changing a sentence
 
@@ -125,22 +128,29 @@ blurry, and it is the exact fault the team flagged on a competitor's site.
 
 ## Using the logo
 
-From the kit's own guidance (`images/brand-kit.html`):
+The site uses the **silver V** (`images/vantage-silver-v/`). From the kit's own guidance
+(`images/vantage-silver-v/index.html`):
 
 - **Size** — 32–48px tall in a header. Never below 24px. The site uses 34px in the header and
   30px in the footer.
-- **Clear space** — at least the height of the lighthouse tower around it.
-- **Backgrounds** — full colour on white or light grey, the white version on navy. The header and
-  footer are navy, so both use the white version.
-- **Don't** stretch it, recolour it, add effects, or rearrange the lighthouse and the name.
-- **Colours** — Navy `#173a63` · Blue `#2e6fc7` · Cyan `#22b8d8` · Violet `#6d4bb6` ·
-  Beacon `#f5b82e`. Cyan is used for small rules only — as type it is too pale to read.
+- **Clear space** — at least the height of the triangle inside the V around it.
+- **Backgrounds** — gunmetal on white or light grey, the silver version on dark. The header and
+  footer are navy, so both use the silver version (`vantage-logo-white.svg`).
+- **Don't** stretch it, recolour it, add effects, or rearrange the V and the name.
+- **Site colours** are still the lighthouse kit's, kept on purpose while the logo is being
+  chosen: Navy `#173a63` · Blue `#2e6fc7` · Cyan `#22b8d8` · Violet `#6d4bb6` · Beacon `#f5b82e`.
+  Cyan is used for small rules only — as type it is too pale to read. The silver kit's own
+  palette (Ink `#16181c`, Gunmetal `#2b323c`, Steel `#7c848e`, Silver `#c4c9cf`) is not used yet.
 - The wordmark is IBM Plex Sans SemiBold converted to vector shapes, so it needs no font installed.
+
+**To switch back to the lighthouse:** in all five pages, replace `images/vantage-silver-v/` with
+`images/lighthouse-logo/`, and on the two `brand-logo` images change `width="180" height="44"` to
+`width="217" height="52"`.
 
 The logo reads **Vantage**; the full legal name appears on the About page, on `legal.html` and in
 the logo's alt text, which is what a screen reader and a search engine read.
 
-*(Note on the files as they arrived 2026-09-29: every `.svg` in the drop was actually a PNG and
+*(Note on the lighthouse files as they arrived 2026-09-29: every `.svg` in the drop was actually a PNG and
 every `.png` an SVG, and the names did not match the artwork. They were renamed to match what
 each file really contains, checked against `brand-kit.html`. The file named `favicon-32.png` was
 really the 180px phone icon, so it is now `apple-touch-icon.png` and a true 32px favicon was

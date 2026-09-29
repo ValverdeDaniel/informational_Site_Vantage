@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vantage Silver V — web kit</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+body{margin:0;background:#f6f7f9;font-family:var(--font-sans);color:#1c2430;line-height:1.5}
+a{color:#2e6fc7}a:hover{color:#173a63}
+main{max-width:960px;margin:0 auto;padding:48px 24px 72px}
+h1{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}h2{font-size:17px;margin:40px 0 12px}
+.sub{color:#5b6573;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #e6e8ec;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.pv{height:170px;display:flex;align-items:center;justify-content:center;padding:24px}.pv img{max-width:100%;max-height:100%}
+.pv.dk{background:#16181c}.pv.ck{background-color:#fff;background-image:linear-gradient(45deg,#f0f2f5 25%,transparent 25%,transparent 75%,#f0f2f5 75%),linear-gradient(45deg,#f0f2f5 25%,transparent 25%,transparent 75%,#f0f2f5 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+.meta{border-top:1px solid #eef0f3;padding:12px 14px;display:grid;gap:6px;font-size:13px}.meta b{font-size:14px}
+.dl{display:flex;gap:10px;flex-wrap:wrap}.dl a{font-weight:600;font-size:12.5px;text-decoration:none;border:1px solid #d4d8df;border-radius:6px;padding:4px 10px;color:#173a63}.dl a:hover{background:#f2f5f9}
+.use{font-size:12.5px;color:#5b6573}
+pre{background:#10233d;color:#dbe8f8;border-radius:10px;padding:16px 18px;overflow:auto;font-family:var(--font-mono);font-size:13px;line-height:1.6;margin:0}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.rule{background:#fff;border:1px solid #e6e8ec;border-radius:10px;padding:14px;font-size:13px;color:#5b6573}.rule b{display:block;color:#1c2430;margin-bottom:4px;font-size:14px}
+.sw{display:flex;gap:10px;flex-wrap:wrap}.s{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e6e8ec;border-radius:8px;padding:6px 10px 6px 6px;font-size:12.5px;font-family:var(--font-mono)}.s i{width:22px;height:22px;border-radius:5px;display:block}
+</style></head>
+<body><main>
+<h1>Vantage Silver V: web kit</h1>
+<p class="sub">Silver V (5a). Every file in this folder is ready to upload to your website.</p>
+
+<h2>Files</h2>
+<div class="grid">
+<div class="card"><div class="pv ck"><img src="vantage-logo.svg" alt="Vantage"></div><div class="meta"><b>Logo: gunmetal</b><span class="use">Site header on white or light backgrounds.</span><div class="dl"><a href="vantage-logo.svg" download="">SVG</a><a href="vantage-logo.png" download="">PNG</a></div></div></div>
+<div class="card"><div class="pv dk"><img src="vantage-logo-white.svg" alt="Vantage"></div><div class="meta"><b>Logo: silver, for dark backgrounds</b><span class="use">Footers, dark heroes, photos with a dark overlay.</span><div class="dl"><a href="vantage-logo-white.svg" download="">SVG</a><a href="vantage-logo-white.png" download="">PNG</a></div></div></div>
+<div class="card"><div class="pv ck"><img src="vantage-logo-stacked.svg" alt="Vantage"></div><div class="meta"><b>Stacked logo</b><span class="use">Hero sections, footers and anywhere tall rather than wide.</span><div class="dl"><a href="vantage-logo-stacked.svg" download="">SVG</a><a href="vantage-logo-stacked.png" download="">PNG</a></div></div></div>
+<div class="card"><div class="pv dk"><img src="vantage-logo-stacked-white.svg" alt="Vantage"></div><div class="meta"><b>Stacked logo: for dark backgrounds</b><span class="use">Same as above, for dark backgrounds.</span><div class="dl"><a href="vantage-logo-stacked-white.svg" download="">SVG</a><a href="vantage-logo-stacked-white.png" download="">PNG</a></div></div></div>
+<div class="card"><div class="pv ck"><img src="vantage-mark.svg" alt="Vantage mark"></div><div class="meta"><b>Mark only</b><span class="use">Where the name already appears nearby, or space is tight.</span><div class="dl"><a href="vantage-mark.svg" download="">SVG</a><a href="vantage-mark.png" download="">PNG</a></div></div></div>
+<div class="card"><div class="pv dk"><img src="vantage-mark-white.svg" alt="Vantage mark"></div><div class="meta"><b>Mark: for dark backgrounds</b><span class="use">Same as above, for dark backgrounds.</span><div class="dl"><a href="vantage-mark-white.svg" download="">SVG</a><a href="vantage-mark-white.png" download="">PNG</a></div></div></div>
+<div class="card"><div class="pv ck"><img src="vantage-app-icon.svg" alt="Vantage app icon" style="height:110px"></div><div class="meta"><b>App icon</b><span class="use">Social profile pictures and bookmarks on phones.</span><div class="dl"><a href="vantage-app-icon.svg" download="">SVG</a><a href="vantage-app-icon.png" download="">PNG 512</a><a href="apple-touch-icon.png" download="">PNG 180</a></div></div></div>
+<div class="card"><div class="pv ck"><img src="favicon.svg" alt="Vantage favicon" style="height:64px"></div><div class="meta"><b>Favicon</b><span class="use">The small icon in the browser tab.</span><div class="dl"><a href="favicon.svg" download="">SVG</a><a href="favicon-32.png" download="">PNG 32</a></div></div></div>
+</div>
+
+<h2>Add it to your site</h2>
+<p class="use" style="margin:0 0 10px">Upload the files to your site's root folder, then paste this into the page's <code>&lt;head&gt;</code> (for the tab icon) and header.</p>
+<pre>&lt;!-- in &lt;head&gt; --&gt;
+&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
+
+&lt;!-- in your header --&gt;
+&lt;a href="/"&gt;&lt;img src="/vantage-logo.svg" alt="Vantage" height="40"&gt;&lt;/a&gt;
+
+&lt;!-- on a dark background --&gt;
+&lt;img src="/vantage-logo-white.svg" alt="Vantage" height="40"&gt;</pre>
+<p class="use">Using Squarespace, Wix or WordPress? Upload <b>vantage-logo.png</b> as the site logo and <b>favicon-32.png</b> as the favicon or browser icon.</p>
+
+<h2>Guidelines</h2>
+<div class="rules">
+<div class="rule"><b>Size</b>Set the logo to 32–48px tall in a header. Don't use it below 24px; switch to the mark only below that.</div>
+<div class="rule"><b>Clear space</b>Keep empty space around the logo at least the height of the triangle inside the V.</div>
+<div class="rule"><b>Backgrounds</b>Use gunmetal on white or light grey. Silver looks best on near-black (#16181c) or dark photos.</div>
+<div class="rule"><b>Don't</b>Stretch it, recolour it, add effects, or rearrange the mark and the name.</div>
+</div>
+
+<h2>Colours</h2>
+<div class="sw">
+<span class="s"><i style="background:#16181c"></i>Ink #16181c</span>
+<span class="s"><i style="background:#2b323c"></i>Gunmetal #2b323c</span>
+<span class="s"><i style="background:#7c848e"></i>Steel #7c848e</span>
+<span class="s"><i style="background:#c4c9cf"></i>Silver #c4c9cf</span>
+<span class="s"><i style="background:#f7f8fa;border:1px solid #e6e8ec"></i>Highlight #f7f8fa</span>
+</div>
+<p class="use" style="margin-top:14px">Typeface: IBM Plex Sans SemiBold (free, SIL Open Font License). The name is converted to vector shapes in every file, so the logo looks the same on any site, with no font to install.</p>
+</main></body></html>
