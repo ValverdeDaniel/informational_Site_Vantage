@@ -258,8 +258,6 @@ section { padding: var(--pad) 0; }
 .contact address span:first-child { display: block; font-size: 12px; text-transform: uppercase;
                                     letter-spacing: 0.08em; color: var(--nav-link); margin-bottom: 4px; }
 .contact .checks li::before { color: #7fd1a5; }
-.phi { background: rgba(255,255,255,.07); border-left: 3px solid var(--beacon);
-       padding: 14px 18px; margin-top: 8px; font-size: 16px; }
 .contact :focus-visible { outline-color: #fff; }
 
 /* Footer — compact; the disclosures live on legal.html */
