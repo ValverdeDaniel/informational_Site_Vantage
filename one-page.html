@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vantage Risk Solutions — Employee Benefits &amp; Commercial Property &amp; Casualty, on one page</title>
+  <meta name="description" content="Everything on one page: every employee benefits and commercial property &amp; casualty line we place, how we work, the industries we serve, the questions we get, contact details and disclosures.">
+  <meta name="theme-color" content="#0f2d4f">
+  <link rel="icon" type="image/svg+xml" href="images/vantage-silver-v/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/vantage-silver-v/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/vantage-silver-v/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+<!-- one-page.html: the whole site on one scrolling page, for visitors who pick One-page.
+     Every section is a COPY of one of the five pages, and those pages are the master:
+     change the words there first, then copy the change here.
+     python _tools/check_one_page.py lists anything that no longer matches.
+     Deliberate differences, all of them: no Talk to a broker band after Home, Employee
+     Benefits and P&C; each page's main heading is a chapter heading here, except Home's;
+     chapter ids and body id top; lazy chapter photos; links point at sections of this page;
+     its own title and description; the footer column says Sections; the switch is reversed;
+     no nav link is marked current; these comments. The README section The two layouts
+     explains each one. -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- NAV — copied into all six pages. Per page only aria-current="page" on the page's own link and the One-page link's #section differ; on one-page.html the links point at its sections, except the switch's Multi-page link. -->
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="images/vantage-silver-v/vantage-logo-white.svg" width="180" height="44"
+           alt="Vantage Risk Solutions">
+    </a>
+    <div class="layout-switch" role="group" aria-label="Site layout">
+      <a href="index.html">Multi-page</a>
+      <span aria-current="true">One-page</span>
+    </div>
+    <nav aria-label="Main">
+      <ul class="nav-links" role="list">
+        <li><a href="#employee-benefits">Employee Benefits</a></li>
+        <li><a href="#property-casualty">Commercial P&amp;C</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-light" href="#contact">Talk to a broker</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- ===== HOME — from index.html (its Talk to a broker band is left out) ===== -->
+<section class="hero hero-lg">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Insurance brokerage for employers</span>
+      <h1>Employee benefits and commercial property &amp; casualty insurance, brokered for employers.</h1>
+      <p class="lede">We take employers to market for group benefits and commercial insurance, negotiate the renewal, and stay on the account all year.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Talk to a broker</a>
+        <a class="btn btn-secondary" href="#practices">See what we cover</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/hero.webp" width="2400" height="1600" alt="A glass office tower with a stepped facade against a clear blue sky" decoding="async" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section id="practices">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Two practices, one firm</h2>
+    </div>
+    <div class="practice">
+      <article class="practice-item">
+        <img src="images/benefits.webp" width="2400" height="1600" loading="lazy" decoding="async"
+             alt="A bright atrium with trees in round wooden planters and green chairs">
+        <h3>Employee Benefits</h3>
+        <p>Group medical, dental, vision, life, disability and voluntary benefits — fully insured, level-funded or self-funded.</p>
+        <a class="more" href="#employee-benefits">Employee benefits services</a>
+      </article>
+      <article class="practice-item">
+        <img src="images/pc.webp" width="2400" height="1600" loading="lazy" decoding="async"
+             alt="A bright white clinic waiting area with a small tree and bench seating">
+        <h3>Commercial Property &amp; Casualty</h3>
+        <p>General liability, property, workers' compensation, auto, umbrella, professional and management liability.</p>
+        <a class="more" href="#property-casualty">Property &amp; casualty services</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how-we-work" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How we work</span>
+      <h2>Three steps, on both sides of the house</h2>
+    </div>
+    <div class="how">
+      <div>
+        <span class="how-num">Step one</span>
+        <h3>Get to market</h3>
+        <p>We build the file — census or applications, loss runs, questionnaires — and send one complete submission to the markets that fit you.</p>
+      </div>
+      <div>
+        <span class="how-num">Step two</span>
+        <h3>Quote to close</h3>
+        <p>Every response goes on one comparison. We negotiate, present a proposal you can decide from, and place the coverage.</p>
+      </div>
+      <div>
+        <span class="how-num">Step three</span>
+        <h3>Implement and service all year</h3>
+        <p>Carrier paperwork, enrollment, policy checking, certificates, the compliance calendar — and the renewal, started early.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="industries">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Industries</span>
+      <h2>Who we work with</h2>
+    </div>
+    <ul class="industries" role="list">
+      <li><strong>Healthcare</strong><span>Medical offices, surgery centers and pain-management clinics.</span></li>
+      <li><strong>Commercial cleaning and building services</strong><span>Janitorial and facilities contractors.</span></li>
+      <li><strong>Marine and yacht services</strong><span>Boatyards, marinas and vessel-services businesses.</span></li>
+      <li><strong>Power generation and energy</strong><span>Plant operators.</span></li>
+      <li><strong>Schools, scholarship programs and nonprofits</strong><span>Small staffs with board-level reporting.</span></li>
+      <li><strong>Manufacturing</strong><span>Rubber, precision and specialty manufacturers.</span></li>
+      <li><strong>Installation and specialty contractors</strong><span>Trades and equipment installers.</span></li>
+    </ul>
+    <p>Not on the list? <a href="#contact">Ask</a> — the process is the same.</p>
+  </div>
+</section>
+
+<!-- ===== EMPLOYEE BENEFITS — from employee-benefits.html (band left out) ===== -->
+<section class="hero hero-sm chapter" id="employee-benefits">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Employee Benefits</span>
+      <h2 class="chapter-title">Group benefits, taken to market and serviced all year</h2>
+      <p class="lede">Every line we quote, how a plan can be funded, and what we do for you once it is sold.</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/benefits.webp" width="2400" height="1600" alt="A bright atrium with trees in round wooden planters and green chairs" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Lines we quote</span>
+      <h2>What we can put in front of a carrier</h2>
+    </div>
+    <div class="groups">
+      <div>
+        <h4>Health</h4>
+        <ul role="list">
+          <li>Medical (group health insurance)</li>
+          <li>Dental</li>
+          <li>Vision</li>
+          <li>Telehealth</li>
+          <li>Employee Assistance Program (EAP)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Life &amp; disability</h4>
+        <ul role="list">
+          <li>Basic Life &amp; AD&amp;D (Accidental Death and Dismemberment)</li>
+          <li>Voluntary Life</li>
+          <li>Short-Term Disability (STD)</li>
+          <li>Long-Term Disability (LTD)</li>
+          <li>Voluntary STD</li>
+          <li>Voluntary LTD</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Voluntary &amp; worksite</h4>
+        <ul role="list">
+          <li>Accident</li>
+          <li>Hospital Indemnity</li>
+          <li>Critical Illness</li>
+          <li>Gap</li>
+          <li>Legal</li>
+          <li>Identity Theft</li>
+          <li>Pet</li>
+          <li>Other voluntary / worksite products</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accounts &amp; contribution tools</h4>
+        <ul role="list">
+          <li>HSA (Health Savings Account)</li>
+          <li>FSA (Flexible Spending Account)</li>
+          <li>Dependent Care FSA</li>
+          <li>HRA (Health Reimbursement Arrangement)</li>
+          <li>ICHRA (Individual Coverage HRA)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Self-funded components</h4>
+        <ul role="list">
+          <li>Stop-Loss (specific and aggregate reinsurance)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Each line is compared on its own terms — a dental plan on its annual maximum, a medical plan on its deductible and drug coverage.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Funding</span>
+      <h2>Three ways to fund a plan</h2>
+    </div>
+    <div class="tiles">
+      <div class="tile">
+        <h4>Fully insured</h4>
+        <p>The carrier holds the risk and sets the rate. We shop it and negotiate the renewal.</p>
+      </div>
+      <div class="tile">
+        <h4>Level-funded</h4>
+        <p>A fixed monthly amount covering expected claims, stop-loss and administration, with a possible surplus if claims run well.</p>
+      </div>
+      <div class="tile">
+        <h4>Self-funded with stop-loss</h4>
+        <p>You pay claims as they come and stop-loss reinsurance caps the exposure. We shop the contract terms, not just the premium.</p>
+      </div>
+    </div>
+
+    <h3>Group sizes we work with</h3>
+    <ul>
+      <li><strong>1 to 50 employees</strong> — marketed through general-agency relationships that return several carriers from one submission.</li>
+      <li><strong>51 or more</strong> — submitted directly to carriers, market by market.</li>
+      <li><strong>100 or more, or any level-funded or self-funded plan</strong> — underwritten on claims experience, which we collect and send.</li>
+    </ul>
+    <p class="note">Group size also decides what applies: COBRA at 20 or more employees, the ACA affordability question at 50 or more.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>From intake to the first invoice</h2>
+    </div>
+    <ol class="steps">
+      <li><strong>Take your group to market</strong> — market by market, not state by state.</li>
+      <li><strong>Put every quote on one comparison</strong> — current, renewal and each option, in the same format.</li>
+      <li><strong>Start the renewal early</strong> — marketing begins about 90 days before your effective date.</li>
+      <li><strong>Build a contribution model you can defend</strong> — employer and employee split by tier.</li>
+      <li><strong>Run open enrollment</strong> — dates, meetings, an employee benefit guide, and a Summary of Benefits and Coverage for every plan sold.</li>
+      <li><strong>Set up benefits administration</strong> — plans, rates and eligibility tested against what was sold, before anyone enrolls.</li>
+      <li><strong>Finish the carrier hand-off</strong> — sold paperwork, termination letter, deductible-credit request, enrollment census, ID cards, and the first invoice checked.</li>
+      <li><strong>Deliver a close-out packet</strong> — sold confirmation, annual disclosures, plan documents and our written compensation disclosure.</li>
+      <li><strong>Take over an existing plan mid-year</strong> — a broker-of-record change moves the account without changing your carrier, plan or rates.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Between renewals</span>
+      <h2>We do not disappear after January 1</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <h4>Day to day</h4>
+        <ul class="checks" role="list">
+          <li>Invoice and billing reconciliation against what was sold</li>
+          <li>Eligibility, new hires and life-event changes</li>
+          <li>Employee questions about their coverage</li>
+          <li>ID cards, and claim or billing escalations with the carrier</li>
+          <li>A midyear stewardship and benchmarking review</li>
+        </ul>
+      </div>
+      <div>
+        <h4>The calendar we keep for you</h4>
+        <ul class="checks" role="list">
+          <li>Renewal marketing kicked off about 90 days out</li>
+          <li>Form 5500 deadline tracking for ERISA plans at or above the participant threshold</li>
+          <li>PCORI (Patient-Centered Outcomes Research Institute) fee reminders</li>
+          <li>Medicare Part D creditable-coverage notices (October 15)</li>
+          <li>ERISA plan documents — wrap Summary Plan Description, Section 125 premium-only plan, Summary Annual Reports and Summaries of Material Modifications</li>
+          <li>COBRA administrator coordination at 20 or more employees</li>
+          <li>ACA affordability considerations at 50 or more</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">We track, prepare and remind. We are not your attorney or your accountant, and filing deadlines remain the plan sponsor's.</p>
+  </div>
+</section>
+
+<!-- ===== COMMERCIAL P&C — from property-casualty.html (band left out) ===== -->
+<section class="hero hero-sm chapter" id="property-casualty">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Commercial Property &amp; Casualty</span>
+      <h2 class="chapter-title">Commercial insurance, submitted complete and checked when it lands</h2>
+      <p class="lede">Each line is its own submission to its own markets, and we build every one complete.</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/pc.webp" width="2400" height="1600" alt="A bright white clinic waiting area with a small tree and bench seating" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Lines we place</span>
+      <h2>What we can put in front of a market</h2>
+    </div>
+    <div class="groups">
+      <div>
+        <h4>Core</h4>
+        <ul role="list">
+          <li>General Liability</li>
+          <li>Commercial Property</li>
+          <li>Workers' Compensation</li>
+          <li>Commercial Auto</li>
+          <li>Umbrella / Excess Liability</li>
+          <li>Liquor Liability <small>Often endorsed onto the general liability policy.</small></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Property extras</h4>
+        <ul role="list">
+          <li>Inland Marine <small>Often a sublimit on the property policy; its own policy when written standalone.</small></li>
+          <li>Flood <small>Written alongside the property policy; needs elevation certificates.</small></li>
+          <li>Boiler &amp; Machinery / Equipment Breakdown</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Auto &amp; transportation</h4>
+        <ul role="list">
+          <li>Garage Dealers</li>
+          <li>Truckers</li>
+          <li>Motor Carrier</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Professional liability</h4>
+        <ul role="list">
+          <li>Professional Liability / E&amp;O (Errors &amp; Omissions)</li>
+          <li>Medical Malpractice</li>
+          <li>Lawyers' Professional Liability</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Management &amp; specialty</h4>
+        <ul role="list">
+          <li>Directors &amp; Officers (D&amp;O)</li>
+          <li>Employment Practices Liability (EPLI)</li>
+          <li>Cyber</li>
+          <li>Crime</li>
+          <li>Fiduciary Liability</li>
+          <li>Employed Lawyers <small>In-house counsel, not a firm's own E&amp;O.</small></li>
+          <li>Kidnap &amp; Ransom</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Packages &amp; bonds</h4>
+        <ul role="list">
+          <li>Business Owner's Policy (BOP)</li>
+          <li>Surety</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>An incomplete submission is a slow quote, or no quote</h2>
+    </div>
+    <ol class="steps">
+      <li><strong>Applications complete before they go out</strong> — the standard ACORD forms each line needs, plus the carrier's own supplement where there is one.</li>
+      <li><strong>A schedule of values covering every location</strong> — limits, construction and occupancy for each building.</li>
+      <li><strong>Loss runs, currently valued</strong> — three to five years, one per policy per year.</li>
+      <li><strong>The rest of a complete file</strong> — payroll by class code, financials for management lines, your expiring applications, and a target premium.</li>
+      <li><strong>Terms reviewed against your expiring policy</strong> — deductibles, forms, sublimits and premium, before you see a proposal.</li>
+      <li><strong>Bind and issue</strong> — the bind request with every condition the carrier attaches, then the binder, certificates and evidence of insurance.</li>
+      <li><strong>Every issued policy checked</strong> — against the binder and the quote, or back to the carrier with a discrepancy list.</li>
+      <li><strong>Premium financing</strong> — shopped across finance companies when you want it.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Between renewals</span>
+      <h2>The year after the policy is issued</h2>
+    </div>
+    <ul class="checks" role="list">
+      <li>Certificates of insurance and evidence of insurance on request</li>
+      <li>Mid-term changes and endorsements</li>
+      <li>Claims reporting and follow-up — we file the claim with the carrier and chase the acknowledgement, the adjuster assignment and the documents</li>
+      <li>Carrier inspections — most often on general liability; we stay on both stages, getting the visit scheduled and closing out the recommendations</li>
+      <li>Every renewal marketed against your expiring terms</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== ABOUT — from about.html ===== -->
+<section class="hero hero-sm chapter" id="about">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">About</span>
+      <h2 class="chapter-title">A brokerage with two practice teams</h2>
+      <p class="lede">Who we are, how we are paid, and the questions we get asked most.</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/about.webp" width="2400" height="1600" alt="A sunlit modern office with a glass meeting room, desks and plants" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">Who we are</span>
+        <h2>Vantage Risk Solutions</h2>
+      </div>
+      <div>
+        <p>Vantage Risk Solutions is an insurance brokerage with two practice teams — employee benefits and commercial property &amp; casualty — that work the same accounts. We are based in <span class="ph">[CITY, STATE]</span> and serve employers in <span class="ph">[SERVICE AREA]</span>.</p>
+        <p><strong>How we are paid.</strong> We are compensated by insurance carriers and, in some cases, by fees agreed with clients. Group health plan clients receive a written description of our compensation, as required by the Consolidated Appropriations Act and ERISA §408(b)(2).</p>
+        <p class="ph">[LEADERSHIP — names, titles and photos, pending each person's consent]</p>
+        <div class="partners">
+          <h3>Referral partners</h3>
+          <p>CPAs, payroll and HR providers, and life agents refer clients to us. We work on referral and put the arrangement in writing. <span class="ph">[CONFIRM THIS OFFER WITH JOEY BEFORE PUBLISHING]</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Questions we get</span>
+      <h2>Straight answers</h2>
+    </div>
+
+    <h3>Do you handle both employee benefits and commercial property &amp; casualty?</h3>
+    <p>Yes. Two practice teams, one firm, often on the same account.</p>
+
+    <h3>What group sizes do you work with?</h3>
+    <p>Groups of 1 to 50 through general-agency markets, 51 and up directly with carriers, and groups of 100 or more — or any level-funded or self-funded plan — underwritten on claims experience.</p>
+
+    <h3>Do you work with self-funded or level-funded plans?</h3>
+    <p>Yes. We compare level-funded against fully insured side by side, and for self-funded groups we shop the stop-loss contract terms and the administrator's fees, not just the premium.</p>
+
+    <h3>Can we change brokers without changing our plan?</h3>
+    <p>Yes. A broker-of-record letter moves the account to us; your carrier, plan and rates stay as they are.</p>
+
+    <h3>What happens after open enrollment?</h3>
+    <p>We stay on the account: invoices, eligibility changes, employee questions, carrier escalations, the compliance calendar, and the renewal started early.</p>
+
+    <h3>Which industries do you serve?</h3>
+    <p>Healthcare, commercial cleaning and building services, marine and yacht services, power generation, schools and nonprofits, manufacturing, and installation and specialty contractors — and others. The process is the same.</p>
+
+    <h3>Is there anything you don't do?</h3>
+    <p>We coordinate, rather than perform, COBRA administration, benefits-administration systems and third-party claims administration. <span class="ph">[PERSONAL LINES — confirm whether the firm writes personal auto or homeowners]</span></p>
+
+    <h3>Where are you located, and where do you write business?</h3>
+    <p>We are based in <span class="ph">[CITY, STATE]</span> and licensed in <span class="ph">[STATES LICENSED]</span>.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h2>Talk to a broker</h2>
+    <p class="lede">Tell us which side you need — benefits, commercial, or both — and where you are in the year.</p>
+
+    <address>
+      <!-- Once filled, wrap the phone in <a href="tel:…"> and the email in <a href="mailto:…">. -->
+      <div><span>Phone</span> <span class="ph">[FIRM PHONE]</span></div>
+      <div><span>Email</span> <span class="ph">[FIRM EMAIL]</span></div>
+      <div><span>Office</span> <span class="ph">[STREET ADDRESS, CITY, STATE ZIP]</span></div>
+      <div><span>Hours</span> <span class="ph">[OFFICE HOURS]</span></div>
+    </address>
+
+    <div class="two-col">
+      <div>
+        <h3>For a benefits review, have ready</h3>
+        <ul class="checks" role="list">
+          <li>Your current renewal letter and rates</li>
+          <li>A recent invoice</li>
+          <li>A member-level census — employees and dependents</li>
+          <li>Your current plan summaries</li>
+          <li>Claims experience, where carriers ask for it</li>
+        </ul>
+      </div>
+      <div>
+        <h3>For a commercial review, have ready</h3>
+        <ul class="checks" role="list">
+          <li>Current policies or declarations pages</li>
+          <li>Three to five years of loss runs</li>
+          <li>A schedule of values for each location</li>
+          <li>Payroll by class code, for workers' compensation</li>
+          <li>Last year's applications</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="phi"><strong>Please do not send census files, Social Security numbers, dates of birth or any health information by regular email.</strong> Ask us for a secure way to share enrollment and claims files first.</p>
+  </div>
+</section>
+
+<!-- ===== DISCLOSURES — from legal.html ===== -->
+<section class="alt chapter" id="legal">
+  <div class="container">
+    <span class="eyebrow">Disclosures</span>
+    <h2 class="chapter-title">Licensing, disclosures and terms</h2>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="container">
+    <h3>Licensing</h3>
+    <p>Insurance products are offered through <span class="ph">[LEGAL ENTITY NAME]</span>, a licensed insurance agency. Licensed in <span class="ph">[STATES LICENSED]</span>; license number <span class="ph">[LICENSE NUMBER]</span>. Not all products are available in all states.</p>
+
+    <h3>Coverage</h3>
+    <p>Coverage descriptions on this site are general summaries. Insurance products are subject to underwriting, carrier approval and the terms, conditions, limits and exclusions of the issued policy, which control in every case. Nothing here binds coverage.</p>
+
+    <h3>Not legal or tax advice</h3>
+    <p>Information about ERISA, the ACA, COBRA, Medicare Part D, Form 5500, PCORI and similar topics is provided for general awareness and is not legal, tax or accounting advice. Consult your own counsel or tax advisor about your obligations.</p>
+
+    <h3>Compensation</h3>
+    <p><span class="ph">[LEGAL ENTITY NAME]</span> is compensated by insurance carriers and, in some cases, by fees agreed with clients. A written description of our compensation is provided to group health plan clients as required by the Consolidated Appropriations Act and ERISA §408(b)(2), and is available on request.</p>
+
+    <h3>Contacting us</h3>
+    <p>Contacting us through this site does not create a broker–client relationship or bind coverage. Do not send protected health information or employee-level census data by unencrypted email.</p>
+
+    <h3>Privacy and accessibility</h3>
+    <p><span class="ph">[PRIVACY NOTICE — counsel to supply]</span> We aim to meet WCAG 2.1 AA; if any part of this site is difficult to use, tell us at <span class="ph">[FIRM EMAIL]</span>.</p>
+
+    <h3>Photography</h3>
+    <p>Photographs on this site are licensed stock and do not depict our clients, our employees or our offices.</p>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER — the same in all five pages; one-page.html has a copy whose links point at its sections.
+     Deliberately carries no placeholders: contact details live on about.html, disclosures on legal.html, and one-page.html repeats both. -->
+<footer class="footer">
+  <div class="container">
+    <div>
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="images/vantage-silver-v/vantage-logo-white.svg" width="180" height="44"
+             alt="Vantage Risk Solutions">
+      </a>
+      <p>An insurance brokerage for employers: employee benefits and commercial property &amp; casualty.</p>
+      <p class="copyright">© Vantage Risk Solutions. All rights reserved.</p>
+    </div>
+    <nav aria-label="Sections">
+      <h3>Sections</h3>
+      <ul role="list">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#employee-benefits">Employee Benefits</a></li>
+        <li><a href="#property-casualty">Commercial Property &amp; Casualty</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="More">
+      <h3>More</h3>
+      <ul role="list">
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#how-we-work">How we work</a></li>
+        <li><a href="#faq">Questions we get</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#legal">Disclosures &amp; licensing</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

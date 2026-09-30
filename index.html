@@ -14,13 +14,17 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAV — the same in all five pages. Change one, change all five. -->
+<!-- NAV — copied into all six pages. Per page only aria-current="page" on the page's own link and the One-page link's #section differ; on one-page.html the links point at its sections, except the switch's Multi-page link. -->
 <header class="nav">
   <div class="container">
     <a class="brand" href="index.html">
       <img class="brand-logo" src="images/vantage-silver-v/vantage-logo-white.svg" width="180" height="44"
            alt="Vantage Risk Solutions">
     </a>
+    <div class="layout-switch" role="group" aria-label="Site layout">
+      <span aria-current="true">Multi-page</span>
+      <a href="one-page.html">One-page</a>
+    </div>
     <nav aria-label="Main">
       <ul class="nav-links" role="list">
         <li><a href="employee-benefits.html">Employee Benefits</a></li>
@@ -46,7 +50,7 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="images/hero.webp" width="1400" height="933" alt="A modern commercial office building against an overcast sky" decoding="async" fetchpriority="high">
+      <img src="images/hero.webp" width="2400" height="1600" alt="A glass office tower with a stepped facade against a clear blue sky" decoding="async" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -59,15 +63,15 @@
     </div>
     <div class="practice">
       <article class="practice-item">
-        <img src="images/benefits.webp" width="1400" height="933" loading="lazy" decoding="async"
-             alt="Two people at a conference table reviewing a document">
+        <img src="images/benefits.webp" width="2400" height="1600" loading="lazy" decoding="async"
+             alt="A bright atrium with trees in round wooden planters and green chairs">
         <h3>Employee Benefits</h3>
         <p>Group medical, dental, vision, life, disability and voluntary benefits — fully insured, level-funded or self-funded.</p>
         <a class="more" href="employee-benefits.html">Employee benefits services</a>
       </article>
       <article class="practice-item">
-        <img src="images/pc.webp" width="1400" height="933" loading="lazy" decoding="async"
-             alt="The interior of an empty steel-frame warehouse">
+        <img src="images/pc.webp" width="2400" height="1600" loading="lazy" decoding="async"
+             alt="A bright white clinic waiting area with a small tree and bench seating">
         <h3>Commercial Property &amp; Casualty</h3>
         <p>General liability, property, workers' compensation, auto, umbrella, professional and management liability.</p>
         <a class="more" href="property-casualty.html">Property &amp; casualty services</a>
@@ -131,8 +135,8 @@
 </section>
 </main>
 
-<!-- FOOTER — the same in all five pages. Deliberately carries no placeholders:
-     the contact details live once on about.html, the disclosures on legal.html. -->
+<!-- FOOTER — the same in all five pages; one-page.html has a copy whose links point at its sections.
+     Deliberately carries no placeholders: contact details live on about.html, disclosures on legal.html, and one-page.html repeats both. -->
 <footer class="footer">
   <div class="container">
     <div>

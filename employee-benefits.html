@@ -14,13 +14,17 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- NAV — the same in all five pages. Change one, change all five. -->
+<!-- NAV — copied into all six pages. Per page only aria-current="page" on the page's own link and the One-page link's #section differ; on one-page.html the links point at its sections, except the switch's Multi-page link. -->
 <header class="nav">
   <div class="container">
     <a class="brand" href="index.html">
       <img class="brand-logo" src="images/vantage-silver-v/vantage-logo-white.svg" width="180" height="44"
            alt="Vantage Risk Solutions">
     </a>
+    <div class="layout-switch" role="group" aria-label="Site layout">
+      <span aria-current="true">Multi-page</span>
+      <a href="one-page.html#employee-benefits">One-page</a>
+    </div>
     <nav aria-label="Main">
       <ul class="nav-links" role="list">
         <li><a href="employee-benefits.html" aria-current="page">Employee Benefits</a></li>
@@ -42,7 +46,7 @@
       <p class="lede">Every line we quote, how a plan can be funded, and what we do for you once it is sold.</p>
     </div>
     <div class="hero-photo">
-      <img src="images/benefits.webp" width="1400" height="933" alt="Two people at a conference table reviewing a document" decoding="async" fetchpriority="high">
+      <img src="images/benefits.webp" width="2400" height="1600" alt="A bright atrium with trees in round wooden planters and green chairs" decoding="async" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -204,8 +208,8 @@
 </section>
 </main>
 
-<!-- FOOTER — the same in all five pages. Deliberately carries no placeholders:
-     the contact details live once on about.html, the disclosures on legal.html. -->
+<!-- FOOTER — the same in all five pages; one-page.html has a copy whose links point at its sections.
+     Deliberately carries no placeholders: contact details live on about.html, disclosures on legal.html, and one-page.html repeats both. -->
 <footer class="footer">
   <div class="container">
     <div>

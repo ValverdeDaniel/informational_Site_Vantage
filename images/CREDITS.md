@@ -9,10 +9,10 @@ chosen with no recognizable face, no logo and no legible text in frame.
 
 | File | Size | Photographer | Source | Shows |
 |---|---|---|---|---|
-| `hero.webp` | 2000 x 1333, 73 KB | Matt Reames | [Unsplash](https://unsplash.com/photos/white-concrete-building-during-daytime-U6WuKgCYbKE) | Modern commercial office building against an overcast sky |
-| `benefits.webp` | 1400 x 933, 44 KB | Olena Kholina | [Unsplash](https://unsplash.com/photos/two-people-reviewing-documents-at-a-table-MhqUBTxQ3Hw) | Two people at a conference table reviewing a document |
-| `pc.webp` | 1400 x 933, 95 KB | Brian Wangenheim | [Unsplash](https://unsplash.com/photos/a-large-empty-warehouse-with-no-people-in-it-D7A6CiIFVk8) | The interior of an empty steel-frame warehouse |
-| `about.webp` | 1400 x 933, 61 KB | Craig Lovelidge | [Unsplash](https://unsplash.com/photos/a-conference-room-with-a-white-table-and-black-chairs-s-KphF10sWM) | An empty modern boardroom with a long white table |
+| `hero.webp` | 2400 x 1600, 146 KB | Parrish Freeman | [Unsplash](https://unsplash.com/photos/0d-z8cJGIR4) | A glass office tower with a stepped facade against a clear blue sky |
+| `benefits.webp` | 2400 x 1600, 300 KB | Bernd Dittrich | [Unsplash](https://unsplash.com/photos/m0B-uK0GNAM) | A bright atrium with trees in round wooden planters and green chairs |
+| `pc.webp` | 2400 x 1600, 194 KB | rawkkim | [Unsplash](https://unsplash.com/photos/X8Y3CJA0aNs) | A bright white clinic waiting area with a small tree and bench seating |
+| `about.webp` | 2400 x 1600, 171 KB | Declan Sun | [Unsplash](https://unsplash.com/photos/fftMS_6sRHo) | A sunlit modern office with a glass meeting room, desks and plants |
 
 Licence terms as of the download date: <https://unsplash.com/license>
 
