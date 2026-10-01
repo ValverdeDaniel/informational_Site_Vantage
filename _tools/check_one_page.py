@@ -10,9 +10,10 @@ one-page.html is a hand-made copy of them, with a fixed list of deliberate diffe
 "The two layouts"). This script allows exactly those differences and reports anything else that
 differs, with file:line on both sides. It compares every section of <main> (tags, attributes, words
 and the spaces between them), the head's charset, viewport, theme-color, icon and stylesheet tags,
-<html lang>, the skip link, the navy bar, the Multi-page | One-page switch and the footer, and it
-checks every link and image path on all six pages. It does not compare comments, or each page's own
-<title> and description. Within one section it reports the first difference: fix it and run again.
+<html lang>, the skip link, the top bar, the Multi-page | One-page switch and the footer, and it
+checks every link and image path on all six pages and every url() in styles.css (the fonts). It does
+not compare comments, or each page's own <title> and description. Within one section it reports the
+first difference: fix it and run again.
 
 Standard library only. GitHub Pages does not publish this folder: Jekyll skips names starting with "_".
 """
@@ -420,6 +421,33 @@ def check_links(root, docs):
                     problem("LINK", f"{where}  href=\"{v}\" - the five pages link to {ONE} only from the switch")
 
 
+# ---------- check 3b: every url() in styles.css names a file, with that exact case ----------
+CSS_URL = re.compile(r"""url\(\s*(['"]?)([^'")]+)\1\s*\)""")
+
+
+def check_css_urls(root):
+    """GitHub Pages is case-sensitive and Windows is not, so a font whose file name differs only in
+    case renders on the desk and silently falls back on the web. The link check above never reads
+    the stylesheet, so this does."""
+    path = root / "styles.css"
+    if not path.exists():
+        problem("MISSING", f"styles.css is not in {root}")
+        return
+    css = path.read_text(encoding="utf-8-sig")
+    for m in CSS_URL.finditer(css):
+        v = m.group(2).strip()
+        line = css.count("\n", 0, m.start()) + 1
+        if SCHEME.match(v) or v.startswith("#"):
+            continue
+        if v.startswith("/"):
+            problem("LINK", f"styles.css:{line}  url({v}) - starts with /, which breaks on the GitHub Pages "
+                            "project site and on double-click; write it relative, without the /")
+            continue
+        if not exists_exact(root, unquote(v.split("?", 1)[0])):
+            problem("LINK", f"styles.css:{line}  url({v}) - no file with exactly that name "
+                            "(GitHub Pages is case-sensitive, even though Windows is not)")
+
+
 def exists_exact(root, rel):
     cur = root
     for seg in rel.split("/"):
@@ -502,7 +530,7 @@ def check_chrome(docs):
         d = first_difference(ref, got)
         if d:
             x, y = d
-            problem("CHROME", "head tags / skip link / navy bar / footer differ",
+            problem("CHROME", "head tags / skip link / top bar / footer differ",
                     f"index.html:{x[2] if x else '-'}  {show(x)}", f"{name}:{y[2] if y else '-'}  {show(y)}")
     # the switch, exactly
     ix = [n for n in elements(docs["index.html"]) if "layout-switch" in classes(n)]
@@ -517,7 +545,7 @@ def check_chrome(docs):
         doc = docs[name]
         sws = [n for n in elements(doc) if "layout-switch" in classes(n)]
         if len(sws) != 1 or not inside_tag(sws[0], "header"):
-            problem("SWITCH", f"{name}: needs exactly one Multi-page | One-page switch, in the navy bar; has {len(sws)}")
+            problem("SWITCH", f"{name}: needs exactly one Multi-page | One-page switch, in the top bar; has {len(sws)}")
         else:
             d = first_difference(switch_expected(name, labels, div_attrs), stream(sws[0], norm_plain))
             if d:
@@ -583,6 +611,7 @@ def main():
         sections = check_text(secs)
         check_structure(docs, secs)
         check_links(root, docs)
+        check_css_urls(root)
         check_chrome(docs)
         check_bands(docs, secs)
     if problems:

@@ -9,8 +9,9 @@ client portal, and it never mentions software.
 The service lists are written so an AI research tool can read, from the page itself, exactly what
 the firm does — that is the reason the site was commissioned.
 
-No build step. No JavaScript. Nothing fetched from anywhere — no fonts, scripts, analytics or
-images. Double-click `index.html` and it opens in your browser; it works the same on any host.
+No build step. No JavaScript. Nothing fetched from any other server — no scripts, analytics or
+outside images. The site's typeface ships with it, in `fonts/`. Double-click `index.html` and it
+opens in your browser; it works the same on any host.
 
 ## Pages
 
@@ -23,18 +24,22 @@ images. Double-click `index.html` and it opens in your browser; it works the sam
 | `legal.html` | Licensing, coverage, compensation, privacy |
 | `one-page.html` | Everything above on one scrolling page — a hand-made copy of the five pages (see **The two layouts**) |
 
-The detail lives on the two practice pages, the way alliant.com does it; the home page carries
-only what a first-time visitor needs. Home is **274 words** against 2,547 on the old single page,
-and none of the five pages exceeds ~620. `one-page.html` carries all of it — about 1,989 words —
-for visitors who would rather scroll.
+The detail lives on the two practice pages; the home page carries only what a first-time visitor
+needs. Home is **250 words**, and none of the five pages exceeds ~590. `one-page.html` carries all
+of it — about 1,830 words — for visitors who would rather scroll.
 
 ## Files
 
 ```
 index.html · employee-benefits.html · property-casualty.html · about.html · legal.html · one-page.html
 styles.css                     one stylesheet, shared by all six pages
-_tools/check_one_page.py       checks one-page.html still matches the five pages (reads only;
-                               GitHub Pages does not publish _tools/)
+fonts/                         IBM Plex, SIL Open Font License (OFL.txt): six .woff2 files —
+                               IBMPlexSerif-Light-Latin1, IBMPlexSerif-LightItalic-Latin1,
+                               IBMPlexSans-Regular-Latin1, IBMPlexSans-SemiBold-Latin1,
+                               IBMPlexSans-SemiBold-Pi, IBMPlexMono-Medium-Latin1
+_tools/check_one_page.py       checks one-page.html still matches the five pages, and that every
+                               font file the stylesheet names exists (reads only; GitHub Pages
+                               does not publish _tools/)
 images/hero.webp               home hero — a glass tower against a blue sky
 images/benefits.webp           Employee Benefits — a bright atrium with trees
 images/pc.webp                 Commercial Property & Casualty — a clinic waiting area
@@ -44,7 +49,7 @@ images/CREDITS.md              where each photograph came from
 images/vantage-silver-v/       the silver V logo kit — the logo the site uses:
   index.html                   the kit's own page: every file, with usage rules
   vantage-logo.svg|.png        gunmetal logo, for white or light backgrounds
-  vantage-logo-white.*         silver logo — what the navy header and footer use
+  vantage-logo-white.*         silver logo — what the dark header and footer use
   vantage-logo-stacked*.*      stacked logo, for tall spaces
   vantage-mark*.svg|.png       mark only, gunmetal and silver
   vantage-app-icon.*           512px app icon, for social profile pictures
@@ -69,9 +74,19 @@ are internal reference — nothing links to them, and you can delete them before
 7. **Change the five pages only — never `one-page.html`.** Every sentence on it is a copy of one on
    the five pages; Daniel copies your change across, and runs the checker, before publishing.
 
+Three layout rules to keep while editing:
+
+- In **Questions we get** (About) and on the Disclosures page, each question is one `<h3>` followed
+  by exactly one `<p>`. Put any extra sentence inside that same `<p>`; a second paragraph shifts the
+  two-column layout.
+- Never put a link inside a line-of-business `<li>`: that list trims its own left edge, and a link
+  there would be clipped.
+- In the home headline, `<em>…</em>` marks the phrase set in silver italics. Keep it identical in
+  `index.html` and `one-page.html`.
+
 If the layout breaks or stray brackets appear, undo and retype rather than guess.
 
-> **The two things to watch:** (1) the navy bar at the top and the footer at the bottom are
+> **The two things to watch:** (1) the dark bar at the top and the footer at the bottom are
 > **copied into all six pages** — on `one-page.html` their links point at sections instead of
 > files; (2) **every sentence on the five pages is also in `one-page.html`**. There is no build
 > step, which is what keeps the site dependency-free, so both are copying jobs — Daniel's, at
@@ -92,7 +107,7 @@ About, Disclosures — with the same words, photos and look. It is a **copy**; t
 master. These are the only deliberate differences, and the checker allows exactly these (it does
 not compare comments, or each page's own title and description):
 
-1. The navy **Talk to a broker** band at the bottom of Home, Employee Benefits and P&C is left out —
+1. The dark **Talk to a broker** band at the bottom of Home, Employee Benefits and P&C is left out —
    the page already has the full Contact section from About, just before Disclosures.
 2. Each page's main heading becomes a chapter heading (`<h2 class="chapter-title">`, same size), so
    the page has one main heading: Home's.
@@ -106,6 +121,10 @@ not compare comments, or each page's own title and description):
 8. The switch is reversed: **Multi-page** is the one link to `index.html`.
 9. No nav link is marked as the current page.
 10. Its own comments.
+
+Each chapter opens on its dark hero (Disclosures on its off-white title band, straight after the
+dark Contact section), so no rule is drawn between chapters; printing still starts each chapter on a
+new page.
 
 **Keeping it in step (Daniel, at publish time).** After any change to the five pages — a filled
 placeholder too — copy the same change into `one-page.html` (Find a few words; the text is
@@ -154,7 +173,7 @@ and `python _tools/check_one_page.py` must print `OK`.)
 
 ## Confirm before publishing — things deliberately left off or left plain
 
-- **"Independent."** The word does not appear anywhere. Until the January 1, 2027 structure
+- **"Independent."** The word does not appear on any page. Until the January 1, 2027 structure
   exists, a research tool reading staff LinkedIn pages would find Brown & Brown / Risk Strategies
   and call the site inconsistent. Revisit after January 1.
 - **One page or several.** Joey asked for one scrolling page and said twice that he does not want
@@ -184,7 +203,9 @@ the question entirely, and avoids a stock face reading as one of our clients or 
 
 To swap one: replace the file, keep the name, and update `CREDITS.md`. Landscape 3:2, at least
 2400 × 1600, saved as WebP. **Never upscale a small image** — that is what makes a site look
-blurry, and it is the exact fault the team flagged on a competitor's site.
+blurry, and it is the exact fault the team flagged on a competitor's site. Each photo's crop in the
+tall hero cell is set by file name in `styles.css` (`object-position`, in the Hero block); after a
+swap, check the new picture both in the hero and in its 16:10 card on the home page.
 
 ## Using the logo
 
@@ -195,12 +216,15 @@ The site uses the **silver V** (`images/vantage-silver-v/`). From the kit's own 
   30px in the footer.
 - **Clear space** — at least the height of the triangle inside the V around it.
 - **Backgrounds** — gunmetal on white or light grey, the silver version on dark. The header and
-  footer are navy, so both use the silver version (`vantage-logo-white.svg`).
+  footer are midnight `#08121e` — the kit's near-black in darkness, the brand navy in hue — so both
+  use the silver version (`vantage-logo-white.svg`).
 - **Don't** stretch it, recolour it, add effects, or rearrange the V and the name.
-- **Site colours** are still the lighthouse kit's, kept on purpose while the logo is being
-  chosen: Navy `#173a63` · Blue `#2e6fc7` · Cyan `#22b8d8` · Violet `#6d4bb6` · Beacon `#f5b82e`.
-  Cyan is used for small rules only — as type it is too pale to read. The silver kit's own
-  palette (Ink `#16181c`, Gunmetal `#2b323c`, Steel `#7c848e`, Silver `#c4c9cf`) is not used yet.
+- **Site colours:** midnight `#0c1a2b` (heroes, the contact band) and `#08121e` (bar, footer);
+  off-white paper `#f5f4f0` and white for content; ink `#0c1a2b` for headings; link blue `#235eb0`;
+  cyan `#22b8d8` for the small rules and marks on light surfaces and for labels on dark ones, with
+  the darker `#16607a` where the cyan family is used as small type on light. Navy `#173a63` remains
+  only as the glow in the contact band. The lighthouse kit's other colours are kept in the
+  stylesheet for the kit and are not used.
 - The wordmark is IBM Plex Sans SemiBold converted to vector shapes, so it needs no font installed.
 
 **To switch back to the lighthouse:** in all six pages, replace `images/vantage-silver-v/` with
@@ -219,23 +243,45 @@ SVG — the PNG of it is here, and `favicon.svg` is the same artwork. Nothing ne
 
 ## Design
 
-The layout follows **alliant.com**, which the firm named as the reference: three surfaces (white,
-one grey tint, one navy band), square corners throughout, large headings at regular weight with
-small heavy labels above them, generous spacing, and **photographs shown clean with nothing laid
-over them** — text sits on a solid panel beside the photo, never on top of it. Body type is 18px.
-Deliberately not copied: Alliant's rotating seven-slide hero, its awards strip, and its statistics
-strip (which would need numbers the firm cannot yet prove).
+The look is **Editorial Midnight**: three dark frames on every page — the opening panel, the
+**Talk to a broker** band and the footer — under a darker top bar, with white and off-white content
+between them. Square corners throughout; structure comes from ruled rows and thin hairlines, not
+cards, shadows or icons. Statements are set in IBM Plex Serif Light at 28px and up, everything a
+visitor reads or clicks in IBM Plex Sans, and the small labels and step numbers in IBM Plex Mono.
+One accent, cyan, appears as small marks on light surfaces and as labels on dark ones. Photographs
+are shown clean, in full colour, beside a solid panel — never darkened, never with text on top —
+and the only motion is a photo that settles on load and a label bar that grows, both off when the
+visitor's system asks for reduced motion. Nothing that carries text ever starts hidden.
+
+The fact lists are set so they scan like a catalogue: the lines of business as ruled rows with the
+group label beside them, the service steps in two numbered columns, and the questions and the
+disclosures as two-column ledgers with every answer visible. Deliberately left out: carousels,
+statistics and award strips, logo walls, faces, and anything that looks like software.
 
 ## Fonts
 
-The stylesheet asks for IBM Plex Sans (the brand font) and falls back to the system font, so the
-page never fetches a font. To ship Plex itself: download the OFL `.woff2` files (400/500/600/700)
-into a `fonts/` folder and paste this at the top of `styles.css`, once per weight:
+IBM Plex is the brand typeface (the wordmark is Plex Sans SemiBold). The site ships it from
+`fonts/` — six `.woff2` files, about 118 KB on the home page and 85–93 KB on the others — so the
+pages render the same everywhere and still request nothing from any other server:
 
-```css
-@font-face { font-family: 'IBM Plex Sans'; font-weight: 400; font-style: normal;
-             src: url('fonts/IBMPlexSans-Regular.woff2') format('woff2'); font-display: swap; }
-```
+| File | Used for |
+|---|---|
+| `IBMPlexSerif-Light-Latin1.woff2` | statements: page and section headings |
+| `IBMPlexSerif-LightItalic-Latin1.woff2` | the silver italic phrase in the home headline (home and one-page only) |
+| `IBMPlexSans-Regular-Latin1.woff2` | everything a visitor reads |
+| `IBMPlexSans-SemiBold-Latin1.woff2` | bold lead-ins, buttons, names, questions |
+| `IBMPlexSans-SemiBold-Pi.woff2` | only the → on links and the ✓ in check lists |
+| `IBMPlexMono-Medium-Latin1.woff2` | the small labels and step numbers |
+
+The files are the Latin-1 subsets from IBM's own packages (`@ibm/plex-serif` 2.0.0,
+`@ibm/plex-sans` 1.1.0, `@ibm/plex-mono` 2.5.0, folder `fonts/split/woff2/`, also in the releases
+at github.com/IBM/plex), under the SIL Open Font License — the licence text is `fonts/OFL.txt`.
+To add a weight, download its `…-Latin1.woff2`, copy one `@font-face` block at the top of
+`styles.css`, and keep the file name's exact case: the web host is case-sensitive, Windows is not,
+and `python _tools/check_one_page.py` checks every font path for that reason. There is no
+`<link rel="preload">` on purpose — the checker does not compare one across the six heads, and
+opening a page by double-click dislikes it. While the serif loads on a first visit the headlines
+show in Georgia, sized to match, so nothing jumps.
 
 ## Publishing
 
@@ -247,6 +293,9 @@ Any static host works because there is nothing to build.
   unconfirmed on 2026-09-29.) GitHub Pages runs Jekyll on the folder, which skips names starting
   with `_`, so `_tools/` is not published. Don't add a `.nojekyll` file — it would publish `_tools/`.
 - **Netlify / Cloudflare Pages:** drag the folder in, leaving `_tools/` out.
+- After a publish, open the site once with the browser's developer tools on the Network tab and
+  confirm every `fonts/*.woff2` file returns 200. If one is 404, its name differs in case from the
+  stylesheet.
 
 Every change is a commit, so a bad edit is one revert away — that is the reason the site lives in
 version control instead of with a third party.
@@ -257,3 +306,5 @@ version control instead of with a third party.
   `[FIRM PHONE]` is worse than none.
 - A contact form (needs a form endpoint; a static site has none).
 - A news / insights page, once there are three real articles.
+- Smaller copies of the photos for phones (`srcset`): every attribute added must be mirrored in
+  `one-page.html`, so it was left out of the first build.
